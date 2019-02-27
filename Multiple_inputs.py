@@ -2,7 +2,7 @@
 import sys
 import copy
 from sys import exit
-
+import time
 class Module1:
 	def line_partition(self,f):
 		akshara_list=[]
@@ -474,6 +474,7 @@ class Module3:
 			self.print_to_file(akshara_list,lk,2,'Chandassu.txt',[],str1)
 		self.print_to_file(akshara_list1,laghu_guru,1,'Laghu_Guru.txt')
 		self.print_to_file(akshara_list2,lk1,3,'Gana.txt',Gana)
+		self.print_console(akshara_list1,laghu_guru)
 	def print_to_file(self,akshara_list=[],laghu_guru=[],ch=None,file1='',Gana=[],str1=''):
 		t=[]
 		f=open(file1,"a")
@@ -493,6 +494,20 @@ class Module3:
 			f.write(str1)
 		f.write("\n----------------------------------------------------------------------------------------------------------------\n")
 		f.close()
+	def print_console(self,akshara_list1,laghu_guru):
+		h_letter=['ಕ್', 'ಖ್', 'ಗ್', 'ಘ್', 'ಙ್', 'ಚ್', 'ಛ್', 'ಜ್', 'ಝ್', 'ಞ್', 'ಟ್', 'ಠ್', 'ಡ್', 'ಢ್', 'ಣ್', 'ತ್', 'ಥ್', 'ದ್', 'ಧ್', 'ನ್','ಪ್', 'ಫ್', 'ಬ್', 'ಭ್', 'ಮ್', 'ಯ್', 'ರ್', 'ಲ್', 'ವ್', 'ಶ್', 'ಷ್', 'ಸ್', 'ಹ್', 'ಳ್']
+		for i in range(0,len(akshara_list1)):
+			laghu_guru[i].pop()	
+			for j in range(0,len(akshara_list1[i])):
+				if laghu_guru[i][j]!=' ' or akshara_list1[i][j]!=' ':
+					print(laghu_guru[i][j])
+					print(akshara_list1[i][j])
+					time.sleep(.5)
+					print("\n")
+			print(laghu_guru[i])
+			print(akshara_list1[i])
+			print("\n")
+			time.sleep(.7)
 if __name__ == '__main__':	
 	f = open(sys.argv[1],"r")
 	Module1_instance=Module1()
