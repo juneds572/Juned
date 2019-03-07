@@ -2,7 +2,7 @@
 import sys
 import copy
 from sys import exit
-import time
+
 class Module1:
 	def line_partition(self,f):
 		akshara_list=[]
@@ -72,7 +72,6 @@ class Module2:
 				if akshara_list[i][j] == " " :
 					lg_line.append(0)
 					j=j+1
-					continue
 				if akshara_list[i][j] in h_letter :
 					if len(lg_line)>0 :
 						lg_line[-1]=2
@@ -204,7 +203,6 @@ class Module3:
 				if tf == True :
 					print("Given poem is Kandapadya")
 					self.Print_Master(akshara_list,"Kandapadya",4,lg_list,lg_dup)
-					return True
 			else :
 				return False
 		else :
@@ -234,32 +232,26 @@ class Module3:
 		if tf == True :
 			print("Given poem is Shara Shatpadi")
 			self.Print_Master(akshara_list,"Shara Shatpadi",4,lg_list,lg_dup)
-			return True
 		tf=self.shatpadiMaster(copy.deepcopy(lg_list),2,3,5,5,"1211","122")
 		if tf == True :
 			print("Given poem is Kusuma Shatpadi")
 			self.Print_Master(akshara_list,"Kusuma Shatapadi",5,lg_list,lg_dup)
-			return True
 		tf=self.shatpadiMaster(copy.deepcopy(lg_list),4,6,3,3,"12","12")
 		if tf == True :
 			print("Given poem is Bhoga Shatpadi")
 			self.Print_Master(akshara_list,"Bhoga Shatpadi",3,lg_list,lg_dup)
-			return True
 		tf=self.shatpadiMaster(copy.deepcopy(lg_list),4,6,3,4,"121","121")
 		if tf == True :
 			print("Given poem is Bhamini Shatpadi")
 			self.Print_Master(akshara_list,"Bhamini Shatpadi",1,lg_list,lg_dup)
-			return True
 		tf=self.shatpadiMaster(copy.deepcopy(lg_list),4,6,4,4,"121","121")
 		if tf == True :
 			print("Given poem is Parivardhini Shatpadi")
 			self.Print_Master(akshara_list,"Parivardhini Shatpadi",4,lg_list,lg_dup)
-			return True
 		tf=self.shatpadiMaster(copy.deepcopy(lg_list),4,6,5,5,"","")
 		if tf == True :
 			print("Given poem is Vardhaka Shatpadi")
 			self.Print_Master(akshara_list,"Vardhaka Shatpadi",5,lg_list,lg_dup)
-			return True
 		return False
 
 	def ragaleMaster(self,lg_list,u0m1l2):
@@ -299,17 +291,14 @@ class Module3:
 		if tf == True :
 			print("Given poem is Utsaha Ragale")
 			self.Print_Master(akshara_list,"Utsaha Ragale",3,lg_list,lg_dup)
-			return True
 		tf=self.ragaleMaster(copy.deepcopy(lg_list),1)
 		if tf == True :
 			print("Given poem is Mandanila Ragale")
 			self.Print_Master(akshara_list,"Mandanila Ragale",4,lg_list,lg_dup)
-			return True
 		tf=self.ragaleMaster(copy.deepcopy(lg_list),2)
 		if tf == True :
 			print("Given poem is Lalita Ragale")
 			self.Print_Master(akshara_list,"Lalita Ragale",5,lg_list,lg_dup)
-			return True
 		return False		
 
 	def vruttaMaster(self,lg_list,string):
@@ -333,81 +322,36 @@ class Module3:
 		if tf == True :
 			print("Given poem is UtpalaMala Vrutta")
 			self.Print_Master(akshara_list,"UtpalaMala Vrutta",0,lg_list,lg_dup)
-			return True
 		tf=self.vruttaMaster(copy.deepcopy(lg_list),champakamalaK)
 		if tf == True :
 			print("Given poem is ChampakaMala Vrutta")
 			self.Print_Master(akshara_list,"ChampakaMala Vrutta",0,lg_list,lg_dup)
-			return True
 		tf=self.vruttaMaster(copy.deepcopy(lg_list),shardulaK)
 		if tf == True :
 			print("Given poem is ShardulaVikridita Vrutta")
 			self.Print_Master(akshara_list,"SharadulaVikridita Vrutta",0,lg_list,lg_dup)
-			return True
 		tf=self.vruttaMaster(copy.deepcopy(lg_list),mattebhaK)
 		if tf == True :
 			print("Given poem is MattebhaVikridita Vrutta")
 			self.Print_Master(akshara_list,"MattabhaVikridaita Vrutta",0,lg_list,lg_dup)
-			return True
 		tf=self.vruttaMaster(copy.deepcopy(lg_list),sragdharaK)
 		if tf == True :
 			print("Given poem is Sragdhara Vrutta")
 			self.Print_Master(akshara_list,"Sragdhara Vrutta",0,lg_list,lg_dup)
-			return True
 		tf=self.vruttaMaster(copy.deepcopy(lg_list),mahasragdharaK)
 		if tf == True :
 			print("Given poem is MahaSragdhara Vrutta")
 			self.Print_Master(akshara_list,"MahaSragdhara Vrutta",0,lg_list,lg_dup)
-			return True
 		return False
 
 	def chandassu(self,akshara_list,lg_list,lm):
-		akshara_para=[]
-		lg_para=[]
-		lg_dup=[]
-		len1=len(akshara_list)
-		i=0
-		while i<len1 :
-			while i<len1 and len(akshara_list[i]) != 0 :
-				akshara_para.append(akshara_list[i])
-				lg_para.append(lg_list[i])
-				lg_dup.append(lm[i])
-				i=i+1	
-			tf=self.kandapadya(copy.deepcopy(akshara_para),copy.deepcopy(lg_para),copy.deepcopy(lg_dup))
-			if tf == True :
-				akshara_para=[]
-				lg_para=[]
-				lg_dup=[]
-				i=i+1
-				continue
-			tf=self.shatpadi(copy.deepcopy(akshara_para),copy.deepcopy(lg_para),copy.deepcopy(lg_dup))
-			if tf == True :
-				akshara_para=[]
-				lg_para=[]
-				lg_dup=[]
-				i=i+1
-				continue
-			tf=self.ragale(copy.deepcopy(akshara_para),copy.deepcopy(lg_para),copy.deepcopy(lg_dup))
-			if tf == True :
-				akshara_para=[]
-				lg_para=[]
-				lg_dup=[]
-				i=i+1
-				continue
-			tf=self.vrutta(copy.deepcopy(akshara_para),copy.deepcopy(lg_para),copy.deepcopy(lg_dup))
-			if tf == True :
-				akshara_para=[]
-				lg_para=[]
-				lg_dup=[]
-				i=i+1
-				continue
-			print("invalid poem")
-			akshara_para=[]
-			lg_para=[]
-			lg_dup=[]
-			i=i+1
+		self.kandapadya(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
+		self.shatpadi(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
+		self.ragale(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
+		self.vrutta(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
+		self.Print_Master(akshara_list,"Invalid",0,lg_list,lm)
 	def Print_Master(self,akshara_list,str1,ch,lg_list,lm) :
-		lg = {1:'U',2:'_ ',0:' '}
+		lg = {1:'U',2:'_',0:' '}
 		akshara_list1=copy.deepcopy(akshara_list)
 		akshara_list2=copy.deepcopy(akshara_list)
 		laghu_guru=[]
@@ -415,7 +359,7 @@ class Module3:
 		Gana=[]
 		lk=[]
 		lk1=[]
-		b = {'211':'  ಭ  ','111':'  ನ  ','122':'  ಯ  ','121':'  ಜ   ','212':'  ರ  ','112':'  ಸ   ','221':'  ತ   ','222':'  ಮ  ','1':'ಲ','2':'ಗು','12':'ಲ ಗು','21':'ಗು ಲ','11':'ಲ ಲ','22':'ಗು ಗು '}
+		b = {'211':'  ಭ  ','111':'  ನ  ','122':'  ಯ  ','121':'  ಜ   ','212':'  ರ  ','112':'  ಸ   ','221':'  ತ   ','222':'  ಮ  '}
 		for j in range(0,len(lg_list),1):
 			m=[]
 			k=[]
@@ -468,13 +412,13 @@ class Module3:
 			f.write(str(akshara_list1))
 			f.write("\n----------------------------------------------------------------------------------------------------\n")	
 		f.close()
-		self.print_console(akshara_list1,laghu_guru)
 		if ch==0:
 			self.print_to_file(akshara_list2,lk1,2,'Chandassu.txt',Gana,str1)
 		elif ch==1 or ch==3 or ch==4 or ch==5:
 			self.print_to_file(akshara_list,lk,2,'Chandassu.txt',[],str1)
 		self.print_to_file(akshara_list1,laghu_guru,1,'Laghu_Guru.txt')
 		self.print_to_file(akshara_list2,lk1,3,'Gana.txt',Gana)
+		exit()
 	def print_to_file(self,akshara_list=[],laghu_guru=[],ch=None,file1='',Gana=[],str1=''):
 		t=[]
 		f=open(file1,"a")
@@ -494,21 +438,6 @@ class Module3:
 			f.write(str1)
 		f.write("\n----------------------------------------------------------------------------------------------------------------\n")
 		f.close()
-	def print_console(self,akshara_list1,laghu_guru):
-		h_letter=['ಕ್', 'ಖ್', 'ಗ್', 'ಘ್', 'ಙ್', 'ಚ್', 'ಛ್', 'ಜ್', 'ಝ್', 'ಞ್', 'ಟ್', 'ಠ್', 'ಡ್', 'ಢ್', 'ಣ್', 'ತ್', 'ಥ್', 'ದ್', 'ಧ್', 'ನ್','ಪ್', 'ಫ್', 'ಬ್', 'ಭ್', 'ಮ್', 'ಯ್', 'ರ್', 'ಲ್', 'ವ್', 'ಶ್', 'ಷ್', 'ಸ್', 'ಹ್', 'ಳ್']
-		for i in range(0,len(akshara_list1)):
-			laghu_guru[i].pop()
-			for j in range(0,len(akshara_list[i])):
-				if akshara_list1[i][j]!=' ' or laghu_guru[i][j]!=' ':
-					print(laghu_guru[i][j])
-					print(akshara_list1[i][j])
-					time.sleep(3)
-					print("\n")
-			print(laghu_guru[i])
-			print(akshara_list1[i])
-			print("\n")
-			time.sleep(7)
-			
 if __name__ == '__main__':	
 	f = open(sys.argv[1],"r")
 	Module1_instance=Module1()
