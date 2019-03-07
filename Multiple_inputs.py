@@ -401,7 +401,7 @@ class Module3:
 				lg_dup=[]
 				i=i+1
 				continue
-			print("invalid poem")
+			self.Print_Master(akshara_para,"Invalid",7,lg_para,lg_dup)
 			akshara_para=[]
 			lg_para=[]
 			lg_dup=[]
