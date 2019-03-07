@@ -349,7 +349,7 @@ class Module3:
 		self.shatpadi(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
 		self.ragale(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
 		self.vrutta(copy.deepcopy(akshara_list),copy.deepcopy(lg_list),copy.deepcopy(lm))
-		self.Print_Master(akshara_list,"Invalid",0,lg_list,lm)
+		self.Print_Master(akshara_list,"Invalid",7,lg_list,lm)
 	def Print_Master(self,akshara_list,str1,ch,lg_list,lm) :
 		lg = {1:'U',2:'_',0:' '}
 		akshara_list1=copy.deepcopy(akshara_list)
